@@ -14,7 +14,8 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
+      <!-- google maps javascript -->
+      <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyA83PRBgKSfHRPIB2rfTulM1-GIcNBo-zo&sensor=true"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -22,13 +23,13 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
 
-      <!-- google maps javascript -->
-     <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyA83PRBgKSfHRPIB2rfTulM1-GIcNBo-zo&sensor=false"></script>
+
 
 
   </head>
-  <body ng-controller="DashCtrl" ng-app="starter" animation="slide-left-right-ios7">
+  <body ng-controller="DashCtrl" ng-app="starter" >
     <!-- 
       The nav bar that will be updated as we navigate between views.
     -->
