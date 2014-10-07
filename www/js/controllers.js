@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngCordova'])
 
 .controller('DashCtrl', function($scope, $ionicLoading) {
     $scope.mapCreated = function(map) {
@@ -34,9 +34,40 @@ angular.module('starter.controllers', [])
   $scope.friend = Friends.get($stateParams.friendId);
 })
 
+    .controller('AccountCtrl', function($scope, $cordovaGeolocation) {
 
-.controller('AccountCtrl', function($scope) {
+        $cordovaGeolocation
+            .getCurrentPosition()
+            .then(function (position) {
+                var lat  = position.coords.latitude
+                var long = position.coords.longitude
 
-});
+                //console.log(lat, long);
+
+            }, function(err) {
+                // error
+            });
+
+        // begin watching
+        var watch = $cordovaGeolocation.watchPosition({ frequency: 1000 });
+        watch.promise.then(function() { /* Not  used */ },
+            function(err) {
+                // An error occurred.
+            },
+            function(position) {
+                // Active updates of the position here
+
+
+
+                // position.coords.[ latitude / longitude]
+            });
+
+
+        // clear watch
+        $cordovaGeolocation.clearWatch(watch.watchId)
+
+    });
+
+
 
 

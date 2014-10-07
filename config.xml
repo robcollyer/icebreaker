@@ -17,6 +17,10 @@
   <preference name="SplashScreenDelay" value="3000"/>
   <preference name="Geolocation" value="geolocation"/>
 
+<!--  <feature name="BackgroundGeoLocation">
+    <param name="ios-package" value="CDVBackgroundGeoLocation" onload="true"/>
+  </feature>
+-->
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
